@@ -1,54 +1,57 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>RPS game</title>
-        <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPS game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1><hr>RPS game - Markov Chain AI</h1>
     </head>
+        <hr>
+<br>        
 
-    <body>
-        <header>
-            <h1><hr>RPS game - Markov Chain AI</h1>
-        </head>
-            <hr>
-    <br>        
+<div class="round" id="action-message">Round 0</div>  
 
-    <div class="round" id="action-message">Round 0</div>  
-
-            <div class="score-board">
-               <div class="headRow">
-                    <div id="user-label" class="badge">user</div>
-                    <div id="draw-label" class="badge">draw</div>
-                    <div id="computer-label" class="badge">AI</div>
-                </div>
-                <div class="Row">
-                    <div id="user-score" class="badge">0</div>
-                    <div id="draw-score" class="badge">0</div>
-                    <div id="computer-score" class="badge">0</div>
-                </div>
+        <div class="score-board">
+           <div class="headRow">
+                <div id="user-label" class="badge">user</div>
+                <div id="draw-label" class="badge">draw</div>
+                <div id="computer-label" class="badge">AI</div>
             </div>
-
-        <div class="selection">
-            <div id="user-selection" class="sbadge"><img src="images/paper.png" id="user-hand" alt=""></div>
-            <div id="computer-selection" class="sbadge"><img src="images/AIrock.png" id="computer-hand" alt=""></div>
-        </div>
-
-        <p>Make your move:</p>
-        <br>
-
-        <div class="choices"> 
-            <div class="choice" id="rock">
-                <img src="images/rock.png" alt="">
-            </div>
-            <div class="choice" id="paper">
-                <img src="images/paper.png" alt="">
-            </div>
-            <div class="choice" id="scissors">
-                <img src="images/scissors.png" alt="">
+            <div class="Row">
+                <div id="user-score" class="badge">0</div>
+                <div id="draw-score" class="badge">0</div>
+                <div id="computer-score" class="badge">0</div>
             </div>
         </div>
 
-      
-      <script src="RPSgame.js" charset="utf-u"></script>
+    <div class="selection">
+        <div id="user-selection" class="sbadge"><img src="images/paper.png" id="user-hand" alt=""></div>
+        <div id="computer-selection" class="sbadge"><img src="images/AIrock.png" id="computer-hand" alt=""></div>
+    </div>
 
-    </body>
+    <p>Make your move:</p>
+    <br>
+
+    <div class="choices"> 
+        <div class="choice" id="rock">
+            <img src="images/rock.png" alt="">
+        </div>
+        <div class="choice" id="paper">
+            <img src="images/paper.png" alt="">
+        </div>
+        <div class="choice" id="scissors">
+            <img src="images/scissors.png" alt="">
+        </div>
+    </div>
+
+  
+  <script src="RPSgame.js" charset="utf-u"></script>
+
+</body>
 </html>
