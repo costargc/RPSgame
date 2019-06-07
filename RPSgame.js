@@ -27,32 +27,7 @@ const AlldrawScore_div = document.getElementById("Alldraw-score");
 const AllcomputerScore_div = document.getElementById("Allcomputer-score");
 const Allaction_div = document.getElementById("ALLaction-message");
 
-
-database.ref().child("maingame").on("value", function (snapshot) {
-
-    AlluserScore = 0;
-    AlldrawScore = 0;
-    AllcomputerScore = 0;
-    Allrounds = 0;
-    Allrocks = 0;
-    Allpapers = 0;
-    Allscissors = 0;
-
-    AlluserScore = snapshot.val()['AlluserScore'];
-    AlldrawScore = snapshot.val()['AlldrawScore'];
-    AllcomputerScore = snapshot.val()['AllcomputerScore'];
-    Allrounds = snapshot.val()['Allrounds'];
-    Allrocks = snapshot.val()['Allrocks'];
-    Allpapers = snapshot.val()['Allpapers'];
-    Allscissors = snapshot.val()['Allscissors'];
-
-    AlluserScore_div.innerHTML = AlluserScore;
-    AlldrawScore_div.innerHTML = AlldrawScore;
-    AllcomputerScore_div.innerHTML = AllcomputerScore;
-
-    Allaction_div.innerHTML = "All Rounds Played: " + Allrounds;
-
-});
+grabdatabasedata();
 
 const userScore_div = document.getElementById("user-score");
 const drawScore_div = document.getElementById("draw-score");
@@ -75,7 +50,7 @@ $('#rock').on("click", function () {
     computerHand_src.src = "images/transparent.png";
 
     setTimeout(function () {
-
+        grabdatabasedata();
         userHand_src.src = "images/rock.png";
         AIchoose = AIselection(game);
         computerHand_src.src = "images/AI" + AIchoose + ".png";
@@ -114,6 +89,7 @@ $('#paper').on("click", function () {
     computerHand_src.src = "images/transparent.png";
 
     setTimeout(function () {
+        grabdatabasedata();
         //console.log("clicked paper");
         userHand_src.src = "images/paper.png";
         AIchoose = AIselection(game);
@@ -147,6 +123,7 @@ $('#paper').on("click", function () {
 })
 
 $('#scissors').on("click", function () {
+    grabdatabasedata();
     event.preventDefault();
     userHand_src.src = "images/transparent.png";
     computerHand_src.src = "images/transparent.png";
@@ -334,3 +311,32 @@ function mod(n, p) {
 
     return n % p;
 }
+
+
+function grabdatabasedata(){
+    database.ref().child("maingame").on("value", function (snapshot) {
+    
+        AlluserScore = 0;
+        AlldrawScore = 0;
+        AllcomputerScore = 0;
+        Allrounds = 0;
+        Allrocks = 0;
+        Allpapers = 0;
+        Allscissors = 0;
+    
+        AlluserScore = snapshot.val()['AlluserScore'];
+        AlldrawScore = snapshot.val()['AlldrawScore'];
+        AllcomputerScore = snapshot.val()['AllcomputerScore'];
+        Allrounds = snapshot.val()['Allrounds'];
+        Allrocks = snapshot.val()['Allrocks'];
+        Allpapers = snapshot.val()['Allpapers'];
+        Allscissors = snapshot.val()['Allscissors'];
+    
+        AlluserScore_div.innerHTML = AlluserScore;
+        AlldrawScore_div.innerHTML = AlldrawScore;
+        AllcomputerScore_div.innerHTML = AllcomputerScore;
+    
+        Allaction_div.innerHTML = "All Rounds Played: " + Allrounds;
+    
+    });
+    }
