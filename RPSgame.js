@@ -22,8 +22,8 @@ var game = Array.from({length: 20}, () => Math.floor(Math.random() * 3));
 
 game.shift(); game.push(0);
 
-rock_div.addEventListener('click', function() {
-    //console.log("clicked rock");
+$('#rock').on("click", function () {
+    event.preventDefault();
     userHand_src.src="images/rock.png";
     AIchoose=AIselection(game);
     computerHand_src.src="images/AI"+AIchoose+".png";
@@ -39,10 +39,10 @@ rock_div.addEventListener('click', function() {
 
     round++;
     round_div.innerHTML="Round "+round;
+});
 
-})
-
-paper_div.addEventListener('click', function() {
+$('#paper').on("click", function () {
+    event.preventDefault();
     //console.log("clicked paper");
     userHand_src.src="images/paper.png";
     AIchoose=AIselection(game);
@@ -62,7 +62,8 @@ paper_div.addEventListener('click', function() {
 
 })
 
-scissors_div.addEventListener('click', function() {
+$('#scissors').on("click", function () {
+    event.preventDefault();
     //console.log("clicked scissors");
     userHand_src.src="images/scissors.png";
     AIchoose=AIselection(game);
