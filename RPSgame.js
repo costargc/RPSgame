@@ -123,12 +123,12 @@ $('#paper').on("click", function () {
 })
 
 $('#scissors').on("click", function () {
-    grabdatabasedata();
     event.preventDefault();
     userHand_src.src = "images/transparent.png";
     computerHand_src.src = "images/transparent.png";
 
     setTimeout(function () {
+        grabdatabasedata();
         //console.log("clicked scissors");
         userHand_src.src = "images/scissors.png";
         AIchoose = AIselection(game);
