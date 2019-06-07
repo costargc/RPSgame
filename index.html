@@ -8,6 +8,10 @@
     <title>RPS game</title>
     <link rel="stylesheet" href="styles.css">
 
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 
@@ -21,7 +25,7 @@
     <hr>
     <br>
 
-    <div class="round" id="action-message">Round 0</div>
+    <div class="round" id="action-message">Session Rounds: 0</div>
 
     <div class="score-board">
         <div class="headRow">
@@ -37,8 +41,8 @@
     </div>
 
     <div class="selection">
-        <div id="user-selection" class="sbadge"><img src="images/transparent.png" id="user-hand" width="128" height="128"></div>
-        <div id="computer-selection" class="sbadge"><img src="images/transparent.png" id="computer-hand" alt=""></div>
+        <div id="user-selection" class="sbadge"><img src="images/rock.png" id="user-hand" width="128" height="128"></div>
+        <div id="computer-selection" class="sbadge"><img src="images/rock.png" id="computer-hand" alt=""></div>
     </div>
 
     <p>Make your move:</p>
@@ -53,6 +57,26 @@
         </div>
         <div class="choice" id="scissors">
             <img src="images/scissors.png" alt="">
+        </div>
+    </div>
+    <br>
+
+
+    <div class="allscore">
+        <br>
+        <div class="round" id="ALLaction-message">All Rounds Played: 0</div>
+
+        <div class="score-board">
+            <div class="headRow">
+                <div id="Alluser-label" class="badge">all user</div>
+                <div id="Alldraw-label" class="badge">all draw</div>
+                <div id="Allcomputer-label" class="badge">all AI</div>
+            </div>
+            <div class="Row">
+                <div id="Alluser-score" class="badge">0</div>
+                <div id="Alldraw-score" class="badge">0</div>
+                <div id="Allcomputer-score" class="badge">0</div>
+            </div>
         </div>
     </div>
 

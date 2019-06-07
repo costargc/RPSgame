@@ -35,7 +35,7 @@ header > h1 {
     {
         float:left;/*fix for  buggy browsers*/
         display:table-column;
-        width:70px;
+        width:100px;
         border:1px solid black;
     }
 
@@ -46,7 +46,7 @@ header > h1 {
 
 .sbadge{
         border: 4px solid black;
-        padding: 77px;
+        padding: 50px 77px 50px 77px;
         margin: 0;
         display: inline-block;
         transition: all 0.3s ease;
@@ -74,3 +74,37 @@ header > h1 {
 .round {
     text-align: center;
 }
+
+
+.allscore{
+    text-align:center;
+    border: 4px solid black;
+    margin: auto;
+    width: 580px;
+    padding: auto;
+
+}
+
+
+
+
+
+
+/* Scoreboard animation */
+#computer-selection{
+    background-color: white;
+    /* border-color: red!important; */
+  }
+  #computer-selection_glow{
+    background-color: greenyellow;
+    /* border-color: red!important; */
+  }
+
+  #user-selection{
+    background-color: white;
+    /* border-color: red!important; */
+  }
+  #user-selection_glow{
+    background-color: greenyellow;
+    /* border-color: red!important; */
+  }
